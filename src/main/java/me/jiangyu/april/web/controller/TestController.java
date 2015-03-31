@@ -1,4 +1,4 @@
-package me.jiangyu.april.web;
+package me.jiangyu.april.web.controller;
 
 import me.jiangyu.april.core.exception.WebSiteException;
 import org.springframework.stereotype.Controller;

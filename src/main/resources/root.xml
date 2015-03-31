@@ -13,7 +13,7 @@
        ">
 
     <context:component-scan base-package="me.jiangyu.april">
-        <context:exclude-filter type="regex" expression="me.jiangyu.website.web"/>
+        <context:exclude-filter type="regex" expression="me.jiangyu.april.web.*"/>
     </context:component-scan>
     <tx:annotation-driven/>
 

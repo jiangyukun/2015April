@@ -1,4 +1,4 @@
-package me.jiangyu.april.web.weixin;
+package me.jiangyu.april.web.controller.weixin;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

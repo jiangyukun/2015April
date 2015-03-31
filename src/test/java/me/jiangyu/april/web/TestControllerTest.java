@@ -1,6 +1,7 @@
 package me.jiangyu.april.web;
 
 import me.jiangyu.april.spi.AbstractControllerTestNGTest;
+import me.jiangyu.april.web.controller.TestController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.util.NestedServletException;
 import org.testng.annotations.Test;

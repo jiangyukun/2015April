@@ -20,18 +20,18 @@ import java.util.List;
 public class Log {
     private static final Logger logger = LoggerFactory.getLogger(Log.class);
 
-    @Pointcut("execution(* me.jiangyu.april.web.TestController.*(..))")
+    @Pointcut("execution(* me.jiangyu.april.web.controller.TestController.*(..))")
     public void pointcut() {
     }
 
     @Before("pointcut()")
     public void beforeController() {
-        logger.error("before");
+        logger.error("aspectj-before");
     }
 
     @AfterThrowing(value = "pointcut()", throwing = "e")
     public String afterThrowing(JoinPoint jp, Exception e) {
-        logger.error("xc");
+        logger.error("aspectj-afterThrowing");
         return "xxx";
     }
 
