@@ -16,5 +16,28 @@
         <context:exclude-filter type="regex" expression="me.jiangyu.april.web.*"/>
     </context:component-scan>
     <tx:annotation-driven/>
-
+    <jee:jndi-lookup id="dataSource" jndi-name="test"/>
+    <bean id="persistenceUnitManager" class="org.springframework.orm.jpa.persistenceunit.DefaultPersistenceUnitManager">
+        <property name="persistenceXmlLocation" value="classpath*:/META-INF/persistence.xml"/>
+        <property name="dataSources">
+            <map>
+                <entry key="dataSource" value-ref="dataSource"/>
+            </map>
+        </property>
+    </bean>
+    <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+        <property name="persistenceUnitManager" ref="persistenceUnitManager"/>
+        <property name="persistenceUnitName" value="test"/>
+        <property name="jpaVendorAdapter">
+            <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+                <property name="showSql" value="false"/>
+                <property name="generateDdl" value="true"/>
+            </bean>
+        </property>
+        <property name="jpaProperties" value="hibernate.dialect = org.hibernate.dialect.MySQLDialect"/>
+        <property name="packagesToScan" value="me.jiangyu.april.entity"/>
+    </bean>
+    <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+        <property name="entityManagerFactory" ref="entityManagerFactory"/>
+    </bean>
 </beans>

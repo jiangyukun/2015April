@@ -1,4 +1,4 @@
-package me.jiangyu.april.spi;
+package me.jiangyu.april.core;
 
 import org.springframework.http.MediaType;
 import org.springframework.test.context.web.WebAppConfiguration;

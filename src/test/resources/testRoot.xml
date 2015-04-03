@@ -13,8 +13,36 @@
        ">
 
     <context:component-scan base-package="me.jiangyu.april">
-        <context:exclude-filter type="regex" expression="me.jiangyu.website.web"/>
+        <context:exclude-filter type="regex" expression="me.jiangyu.april.web.*"/>
     </context:component-scan>
     <tx:annotation-driven/>
-
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.SimpleDriverDataSource">
+        <property name="driverClass" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/test"/>
+        <property name="username" value="root"/>
+        <property name="password" value="vvvv"/>
+    </bean>
+    <bean id="persistenceUnitManager" class="org.springframework.orm.jpa.persistenceunit.DefaultPersistenceUnitManager">
+        <property name="persistenceXmlLocation" value="classpath*:/META-INF/persistence.xml"/>
+        <property name="dataSources">
+            <map>
+                <entry key="dataSource" value-ref="dataSource"/>
+            </map>
+        </property>
+    </bean>
+    <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+        <property name="persistenceUnitManager" ref="persistenceUnitManager"/>
+        <property name="persistenceUnitName" value="test"/>
+        <property name="jpaVendorAdapter">
+            <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+                <property name="showSql" value="true"/>
+                <property name="generateDdl" value="false"/>
+            </bean>
+        </property>
+        <property name="jpaProperties" value="hibernate.dialect = org.hibernate.dialect.MySQLDialect"/>
+        <property name="packagesToScan" value="me.jiangyu.april.entity"/>
+    </bean>
+    <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+        <property name="entityManagerFactory" ref="entityManagerFactory"/>
+    </bean>
 </beans>

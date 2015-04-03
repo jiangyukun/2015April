@@ -20,7 +20,7 @@ import java.util.List;
 public class Log {
     private static final Logger logger = LoggerFactory.getLogger(Log.class);
 
-    @Pointcut("execution(* me.jiangyu.april.web.controller.TestController.*(..))")
+    @Pointcut("execution(* me.jiangyu.april.web.controller.test.TestController.*(..))")
     public void pointcut() {
     }
 

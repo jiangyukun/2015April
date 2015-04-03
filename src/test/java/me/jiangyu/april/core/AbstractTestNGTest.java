@@ -1,4 +1,4 @@
-package me.jiangyu.april.spi;
+package me.jiangyu.april.core;
 
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
