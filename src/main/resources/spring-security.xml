@@ -6,12 +6,12 @@
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/security
         http://www.springframework.org/schema/security/spring-security.xsd">
-
+    <beans:bean id="customSecurityFilter" class="me.jiangyu.april.web.security.RoleAdminFilter"/>
     <http auto-config="false" authentication-manager-ref="authenticationManager">
 
-        <!--<intercept-url pattern="/pages/org/*.jsp" access="ROLE_ADMIN"/>-->
+        <intercept-url pattern="/admin" access="ROLE_ADMIN"/>
         <form-login login-page="/login"/>
-<!--<custom-filter ref=""/>-->
+        <custom-filter ref="customSecurityFilter" after="ANONYMOUS_FILTER"/>
 
     </http>
     <authentication-manager id="authenticationManager">
