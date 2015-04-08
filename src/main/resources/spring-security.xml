@@ -6,16 +6,33 @@
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/security
         http://www.springframework.org/schema/security/spring-security.xsd">
-    <beans:bean id="customSecurityFilter" class="me.jiangyu.april.web.security.RoleAdminFilter"/>
-    <http auto-config="false" authentication-manager-ref="authenticationManager">
 
-        <intercept-url pattern="/admin" access="ROLE_ADMIN"/>
-        <form-login login-page="/login"/>
-        <custom-filter ref="customSecurityFilter" after="ANONYMOUS_FILTER"/>
+    <beans:bean id="customSecurityFilter" class="me.jiangyu.april.web.security.RoleAdminFilter"/>
+    <http auto-config="true" authentication-manager-ref="authenticationManager"
+          access-decision-manager-ref="affirmativeBased">
+
+        <intercept-url pattern="/index" access="ROLE_ADMIN"/>
+        <intercept-url pattern="/admin/**" access="ROLE_ADMIN"/>
+        <intercept-url pattern="/test/**" access="ROLE_ADMIN"/>
+        <form-login login-page="/account/login"/>
+        <!--<custom-filter ref="customSecurityFilter" after="ANONYMOUS_FILTER"/>-->
 
     </http>
     <authentication-manager id="authenticationManager">
-
-        <!--<authentication-provider ref="orgAuthenticationProvider"/>-->
+        <authentication-provider user-service-ref="myUserDetailsService"/>
     </authentication-manager>
+
+    <beans:bean id="affirmativeBased" class="org.springframework.security.access.vote.AffirmativeBased">
+        <beans:constructor-arg name="decisionVoters">
+            <beans:list>
+                <beans:ref bean="roleVoter"/>
+                <beans:ref bean="authenticatedVoter"/>
+            </beans:list>
+        </beans:constructor-arg>
+    </beans:bean>
+    <beans:bean id="roleVoter" class="org.springframework.security.access.vote.RoleVoter">
+        <beans:property name="rolePrefix" value=""/>
+    </beans:bean>
+
+    <beans:bean id="authenticatedVoter" class="org.springframework.security.access.vote.AuthenticatedVoter"/>
 </beans:beans>

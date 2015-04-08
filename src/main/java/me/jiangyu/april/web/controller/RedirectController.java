@@ -12,7 +12,7 @@ import java.util.Map;
  * Created by jiangyukun on 2015/3/20.
  */
 @Controller
-@RequestMapping("/")
+@RequestMapping("/redirect")
 public class RedirectController {
     public static final String PREFIX = "redirect:";
 

@@ -10,7 +10,7 @@
     <title>sdf</title>
 </head>
 <body>
-action4我的afd
+index
 </body>
 <script>
 
