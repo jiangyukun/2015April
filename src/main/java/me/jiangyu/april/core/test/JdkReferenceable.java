@@ -10,6 +10,12 @@ import javax.naming.Referenceable;
 public class JdkReferenceable implements Referenceable {
     @Override
     public Reference getReference() throws NamingException {
+        byte b = '1';
+        char c = '\u1234';
         return null;
+
     }
+
+
+
 }
