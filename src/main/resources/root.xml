@@ -16,7 +16,7 @@
         <context:exclude-filter type="regex" expression="me.jiangyu.april.web.*"/>
     </context:component-scan>
     <tx:annotation-driven/>
-    <jee:jndi-lookup id="dataSource" jndi-name="test"/>
+    <jee:jndi-lookup id="dataSource" jndi-name="jdbc/april"/>
     <bean id="persistenceUnitManager" class="org.springframework.orm.jpa.persistenceunit.DefaultPersistenceUnitManager">
         <property name="persistenceXmlLocation" value="classpath*:/META-INF/persistence.xml"/>
         <property name="dataSources">

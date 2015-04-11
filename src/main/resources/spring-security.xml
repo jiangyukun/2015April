@@ -11,9 +11,7 @@
     <http auto-config="true" authentication-manager-ref="authenticationManager"
           access-decision-manager-ref="affirmativeBased">
 
-        <intercept-url pattern="/index" access="ROLE_ADMIN"/>
-        <intercept-url pattern="/admin/**" access="ROLE_ADMIN"/>
-        <intercept-url pattern="/test/**" access="ROLE_ADMIN"/>
+        <!--<intercept-url pattern="/admin/**" access="ROLE_ADMIN"/>-->
         <form-login login-page="/account/login"/>
         <!--<custom-filter ref="customSecurityFilter" after="ANONYMOUS_FILTER"/>-->
 
