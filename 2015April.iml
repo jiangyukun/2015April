@@ -43,7 +43,7 @@
         <setting name="provider-name" value="" />
         <datasource-mapping>
           <factory-entry name="rds" />
-          <factory-entry name="test" />
+          <factory-entry name="test" value="ff620379-9c6a-4196-b4fa-c3ca52342520" />
         </datasource-mapping>
         <deploymentDescriptor name="persistence.xml" url="file://$MODULE_DIR$/src/main/resources/META-INF/persistence.xml" />
       </configuration>

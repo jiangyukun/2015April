@@ -7,6 +7,7 @@ public class WebSiteException extends Exception {
     public WebSiteException() {
 
     }
+
     public WebSiteException(String message) {
         super(message);
     }

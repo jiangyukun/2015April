@@ -13,6 +13,7 @@ import org.slf4j.LoggerFactory;
  */
 public class AjaxExceptionAdvice implements MethodInterceptor {
     private static final Logger logger = LoggerFactory.getLogger(AjaxExceptionAdvice.class);
+
     @Override
     public Object invoke(MethodInvocation invocation) throws Throwable {
         try {
