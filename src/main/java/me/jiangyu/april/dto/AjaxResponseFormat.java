@@ -6,11 +6,15 @@ import me.jiangyu.april.core.Constants;
  * Created by jiangyukun on 4/23/15.
  */
 public class AjaxResponseFormat {
-    public static final AjaxResponseFormat DEFAULT = new AjaxResponseFormat(Constants.Code.OK);
+    public static final AjaxResponseFormat DEFAULT = new AjaxResponseFormat();
 
     private String code;
     private String message;
     private Object data;
+
+    public AjaxResponseFormat() {
+        this(Constants.Code.OK, Constants.SUCCESS, null);
+    }
 
     public AjaxResponseFormat(String code) {
         this(code, null, null);
@@ -20,7 +24,7 @@ public class AjaxResponseFormat {
         this(code, message, null);
     }
 
-    public AjaxResponseFormat(String code, String message, String data) {
+    public AjaxResponseFormat(String code, String message, Object data) {
         this.code = code;
         this.message = message;
         this.data = data;

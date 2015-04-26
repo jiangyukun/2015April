@@ -23,6 +23,6 @@ public class AjaxExceptionReturnedAdvisor extends AbstractPointcutAdvisor {
 
     @Override
     public Advice getAdvice() {
-        return new AjaxExceptionAdvice();
+        return new AjaxRequestControllerExceptionAdvice();
     }
 }

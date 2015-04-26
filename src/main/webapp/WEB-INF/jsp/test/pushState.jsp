@@ -9,7 +9,7 @@
 <head>
     <title></title>
     <link type="text/css" rel="stylesheet" href="${ctx}/resource/css/bootstrap.css"/>
-    <script src="${ctx}/resource/js/jquery-2.1.1.js"></script>
+    <script src="${ctx}/res/js/jquery-2.1.1.js"></script>
 </head>
 <body>
 

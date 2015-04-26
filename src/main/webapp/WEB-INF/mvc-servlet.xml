@@ -11,12 +11,24 @@
             http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
        ">
     <context:component-scan base-package="me.jiangyu.april.web"/>
-    <aop:aspectj-autoproxy/>
-    <mvc:annotation-driven/>
     <mvc:default-servlet-handler/>
-
-    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
-        <property name="messageConverters">
+    <aop:aspectj-autoproxy/>
+    <mvc:annotation-driven>
+        <mvc:message-converters>
+            <bean class="org.springframework.http.converter.StringHttpMessageConverter">
+                <property name="supportedMediaTypes">
+                    <list>
+                        <value>text/plain;charset=utf-8</value>
+                    </list>
+                </property>
+            </bean>
+            <bean class="org.springframework.http.converter.xml.MappingJackson2XmlHttpMessageConverter">
+                <property name="supportedMediaTypes">
+                    <list>
+                        <value>application/xml;charset=utf-8</value>
+                    </list>
+                </property>
+            </bean>
             <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
                 <property name="supportedMediaTypes">
                     <list>
@@ -24,14 +36,15 @@
                     </list>
                 </property>
             </bean>
-        </property>
-    </bean>
+        </mvc:message-converters>
+    </mvc:annotation-driven>
+    <mvc:default-servlet-handler/>
 
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/jsp/"/>
         <property name="suffix" value=".jsp"/>
     </bean>
-    <bean class="me.jiangyu.april.core.exception.CustomExceptionResolver"/>
+    <bean class="me.jiangyu.april.web.exception.CustomExceptionResolver"/>
 
     <bean id="aopTest1Proxy" name="aopTest1Proxy" class="org.springframework.aop.framework.ProxyFactoryBean">
         <property name="target" ref="aopTest1"/>

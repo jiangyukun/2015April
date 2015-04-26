@@ -4,13 +4,18 @@
         <Console name="Console" target="SYSTEM_OUT">
             <PatternLayout pattern="[%d] %msg%n"/>
         </Console>
+        <File name="log" fileName="/server/2015April.log" append="false">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} %-5level [%msg]%n"/>
+        </File>
     </Appenders>
     <Loggers>
         <Root level="error" additivity="false">
             <AppenderRef ref="Console"/>
+            <AppenderRef ref="log"/>
         </Root>
         <Logger name="me.jiangyu" level="debug" additivity="false">
             <AppenderRef ref="Console"/>
+            <AppenderRef ref="log"/>
         </Logger>
     </Loggers>
 </Configuration>

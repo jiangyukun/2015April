@@ -31,7 +31,7 @@
         <property name="prefix" value="/WEB-INF/jsp/"/>
         <property name="suffix" value=".jsp"/>
     </bean>
-    <bean class="me.jiangyu.april.core.exception.CustomExceptionResolver"/>
+    <bean class="me.jiangyu.april.web.exception.CustomExceptionResolver"/>
 
     <bean id="aopTest1Proxy" name="aopTest1Proxy" class="org.springframework.aop.framework.ProxyFactoryBean">
         <property name="target" ref="aopTest1"/>
