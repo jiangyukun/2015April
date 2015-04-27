@@ -3,7 +3,7 @@ package me.jiangyu.april.web.controller.weixin.xml;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlCData;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import me.jiangyu.april.web.WeixinConstants;
+import me.jiangyu.april.core.WeixinConstants;
 
 /**
  * 回复微信消息
