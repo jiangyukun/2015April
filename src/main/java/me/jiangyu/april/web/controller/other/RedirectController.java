@@ -1,4 +1,4 @@
-package me.jiangyu.april.web.controller;
+package me.jiangyu.april.web.controller.other;
 
 import me.jiangyu.april.dto.UserDto;
 import org.springframework.stereotype.Controller;

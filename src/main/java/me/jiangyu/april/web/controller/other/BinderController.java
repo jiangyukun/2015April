@@ -1,4 +1,4 @@
-package me.jiangyu.april.web.controller;
+package me.jiangyu.april.web.controller.other;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.WebDataBinder;

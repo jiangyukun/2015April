@@ -1,6 +1,6 @@
 package me.jiangyu.april.web.controller.weixin.xml;
 
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlCData;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 import me.jiangyu.april.web.WeixinConstants;
@@ -12,62 +12,67 @@ import me.jiangyu.april.web.WeixinConstants;
 @JacksonXmlRootElement(localName = "xml")
 public class ReplyMessage {
 
-    private String ToUserName;
-    private String FromUserName;
-    private String CreateTime;
-    private String MsgType;
-    private String Content;
+    private String toUserName;
+    private String fromUserName;
+    private long createTime;
+    private String msgType;
+    private String content;
 
     public ReplyMessage(ReceiveMessage receiveXml) {
         this.setFromUserName(receiveXml.getToUserName());
         this.setToUserName(receiveXml.getFromUserName());
         this.setContent(receiveXml.getContent());
-        this.setCreateTime(receiveXml.getCreateTime());
+        this.setCreateTime(System.currentTimeMillis());
         this.setMsgType(WeixinConstants.MESSAGE_TYPE_TEXT);
     }
 
     @JacksonXmlProperty(localName = "ToUserName")
+    @JacksonXmlCData
     public String getToUserName() {
-        return ToUserName;
+        return toUserName;
     }
 
     public void setToUserName(String toUserName) {
-        ToUserName = toUserName;
+        this.toUserName = toUserName;
     }
 
+
     @JacksonXmlProperty(localName = "FromUserName")
+    @JacksonXmlCData
     public String getFromUserName() {
-        return FromUserName;
+        return fromUserName;
     }
 
     public void setFromUserName(String fromUserName) {
-        FromUserName = fromUserName;
+        this.fromUserName = fromUserName;
     }
 
     @JacksonXmlProperty(localName = "CreateTime")
-    public String getCreateTime() {
-        return CreateTime;
+    public long getCreateTime() {
+        return createTime;
     }
 
-    public void setCreateTime(String createTime) {
-        CreateTime = createTime;
+    public void setCreateTime(long createTime) {
+        this.createTime = createTime;
     }
 
     @JacksonXmlProperty(localName = "MsgType")
+    @JacksonXmlCData
     public String getMsgType() {
-        return MsgType;
+        return msgType;
     }
 
     public void setMsgType(String msgType) {
-        MsgType = msgType;
+        this.msgType = msgType;
     }
 
     @JacksonXmlProperty(localName = "Content")
+    @JacksonXmlCData
     public String getContent() {
-        return Content;
+        return content;
     }
 
     public void setContent(String content) {
-        Content = content;
+        this.content = content;
     }
 }

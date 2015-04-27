@@ -1,0 +1,27 @@
+
+rm -rf /server/nolib.tar.gz
+cd /Users/jiangyukun/IdeaProjects/2015April/target/2015April
+tar -zcvf /server/nolib.tar.gz --exclude=WEB-INF/lib --exclude=nolib.tar.gz *
+ssh root@test.jiangyu.me
+cd /server
+rm -rf nolib.tar.gz
+rm -rf tmp
+rm -rf 2015April.log
+mkdir tmp
+exit
+
+scp /server/nolib.tar.gz root@test.jiangyu.me:/server/tmp
+ssh root@test.jiangyu.me
+cd /server
+mkdir tmp/2015April
+cd /server/tmp/2015April/
+tar -zxvf ../nolib.tar.gz
+cp -r /server/lib WEB-INF/
+jar -cf 2015April.war *
+cd /server/apache-tomcat-8.0.21/
+bin/shutdown.sh
+rm -rf webapps/
+mkdir webapps
+cp /server/tmp/2015April/2015April.war webapps/
+bin/startup.sh
+cd ..

@@ -17,7 +17,7 @@ public class CustomExceptionResolver extends AbstractHandlerExceptionResolver {
 
     @Override
     protected ModelAndView doResolveException(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) {
-        logger.error(ex.getMessage(), ex);
+        logger.error(ex.getMessage());
         if (ex instanceof WebSiteException) {
             return new ModelAndView("/index");
         }

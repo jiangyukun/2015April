@@ -1,5 +1,6 @@
 package me.jiangyu.april.web.controller.weixin.xml;
 
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlCData;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlText;
@@ -20,6 +21,7 @@ public class ReceiveMessage {
     private String msgId;
 
     @JacksonXmlProperty(localName = "ToUserName")
+    @JacksonXmlCData
     public String getToUserName() {
         return toUserName;
     }
@@ -29,6 +31,7 @@ public class ReceiveMessage {
     }
 
     @JacksonXmlProperty(localName = "FromUserName")
+    @JacksonXmlCData
     public String getFromUserName() {
         return fromUserName;
     }
@@ -47,6 +50,7 @@ public class ReceiveMessage {
     }
 
     @JacksonXmlProperty(localName = "MsgType")
+    @JacksonXmlCData
     public String getMsgType() {
         return msgType;
     }
@@ -56,6 +60,7 @@ public class ReceiveMessage {
     }
 
     @JacksonXmlProperty(localName = "Content")
+    @JacksonXmlCData
     public String getContent() {
         return content;
     }

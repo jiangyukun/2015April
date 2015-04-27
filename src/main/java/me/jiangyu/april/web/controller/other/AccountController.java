@@ -1,4 +1,4 @@
-package me.jiangyu.april.web.controller;
+package me.jiangyu.april.web.controller.other;
 
 import me.jiangyu.april.dto.AjaxResponseFormat;
 import me.jiangyu.april.entity.User;

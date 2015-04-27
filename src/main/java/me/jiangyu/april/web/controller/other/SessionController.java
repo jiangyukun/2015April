@@ -1,4 +1,4 @@
-package me.jiangyu.april.web.controller;
+package me.jiangyu.april.web.controller.other;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
