@@ -1,6 +1,7 @@
 package me.jiangyu.april.core.util;
 
 import me.jiangyu.april.core.WeixinConstants;
+import me.jiangyu.april.core.exception.UnExpectedException;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.ResponseHandler;
@@ -12,6 +13,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
+ * http请求工具类
  * Created by jiangyukun on 2015/4/27.
  */
 public class HttpClientUtils {
@@ -40,7 +42,7 @@ public class HttpClientUtils {
             return responseBody;
         } catch (Exception e) {
             logger.error(e.getMessage());
-            throw new RuntimeException(e.getMessage());
+            throw new UnExpectedException(e.getMessage());
         } finally {
             try {
                 if (httpclient != null)

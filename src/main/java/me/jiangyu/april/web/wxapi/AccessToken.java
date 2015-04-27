@@ -1,6 +1,8 @@
 package me.jiangyu.april.web.wxapi;
 
 import me.jiangyu.april.core.WeixinConstants;
+import me.jiangyu.april.core.util.HttpClientUtils;
+import me.jiangyu.april.core.util.JsonUtil;
 import me.jiangyu.april.core.util.PropertiesUtils;
 import me.jiangyu.april.dto.weixin.AccessTokenDto;
 
@@ -13,8 +15,14 @@ public class AccessToken {
 
     public static AccessTokenDto getAccessToken() {
         if (accessTokenDto == null) {
-            String accessTokenBaseUrl = PropertiesUtils.getProperty(WeixinConstants.ACCESS_TOKEN_BASE_URL_KEY);
+            String accessTokenStr = HttpClientUtils.getAccessTokenString();
+            accessTokenDto = JsonUtil.reader(accessTokenStr, AccessTokenDto.class);
         }
-        return null;
+        return accessTokenDto;
+    }
+
+    public static void main(String[] args) {
+        AccessTokenDto accessTokenDto = AccessToken.getAccessToken();
+        System.out.println(accessTokenDto);
     }
 }
