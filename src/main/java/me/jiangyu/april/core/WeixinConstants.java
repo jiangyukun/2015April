@@ -8,4 +8,6 @@ public class WeixinConstants {
     public static final String SECRET = "secret";
     public static final String ACCESS_TOKEN_BASE_URL_KEY = "access_token_base_url";
     public static final String MESSAGE_TYPE_TEXT = "text";
+    public static final String MESSAGE_TYPE_IMAGE = "image";
+    public static final String MESSAGE_TYPE_NEWS = "news";
 }

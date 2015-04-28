@@ -32,8 +32,9 @@
     <file url="file://$PROJECT_DIR$/src/main/java/me/jiangyu/april/web/controller/test/MyRestController.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/me/jiangyu/april/web/controller/test/TestController.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/me/jiangyu/april/web/controller/weixin/TokenController.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/main/java/me/jiangyu/april/web/controller/weixin/xml/ReceiveMessage.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/main/java/me/jiangyu/april/web/controller/weixin/xml/ReplyMessage.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/me/jiangyu/april/web/controller/weixin/xml/image/ReplyImageAndTextMessage.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/me/jiangyu/april/web/controller/weixin/xml/text/ReceiveTextMessage.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/me/jiangyu/april/web/controller/weixin/xml/text/ReplyTextMessage.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/me/jiangyu/april/web/debug/WebBeanNamePostProcessor.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/me/jiangyu/april/web/exception/CustomExceptionResolver.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/me/jiangyu/april/web/security/RoleAdminFilter.java" charset="UTF-8" />

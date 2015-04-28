@@ -3,28 +3,17 @@ package me.jiangyu.april.web.controller.weixin.xml;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlCData;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import me.jiangyu.april.core.WeixinConstants;
 
 /**
- * 鍥炲寰俊娑堟伅
- * Created by jiangyukun on 4/25/15.
+ * 微信消息基类
+ * Created by jiangyukun on 4/27/15.
  */
 @JacksonXmlRootElement(localName = "xml")
-public class ReplyMessage {
-
+public class GenericMessage {
     private String toUserName;
     private String fromUserName;
     private long createTime;
     private String msgType;
-    private String content;
-
-    public ReplyMessage(ReceiveMessage receiveXml) {
-        this.setFromUserName(receiveXml.getToUserName());
-        this.setToUserName(receiveXml.getFromUserName());
-        this.setContent(receiveXml.getContent());
-        this.setCreateTime(System.currentTimeMillis());
-        this.setMsgType(WeixinConstants.MESSAGE_TYPE_TEXT);
-    }
 
     @JacksonXmlProperty(localName = "ToUserName")
     @JacksonXmlCData
@@ -35,7 +24,6 @@ public class ReplyMessage {
     public void setToUserName(String toUserName) {
         this.toUserName = toUserName;
     }
-
 
     @JacksonXmlProperty(localName = "FromUserName")
     @JacksonXmlCData
@@ -64,15 +52,5 @@ public class ReplyMessage {
 
     public void setMsgType(String msgType) {
         this.msgType = msgType;
-    }
-
-    @JacksonXmlProperty(localName = "Content")
-    @JacksonXmlCData
-    public String getContent() {
-        return content;
-    }
-
-    public void setContent(String content) {
-        this.content = content;
     }
 }

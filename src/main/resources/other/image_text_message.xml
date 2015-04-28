@@ -1,0 +1,36 @@
+<xml>
+    <ToUserName><![CDATA[osKbZsyI9c1t3KjnDKUyoYoW4Dno]]></ToUserName>
+    <FromUserName><![CDATA[gh_ad1dd27c7d98]]></FromUserName>
+    <CreateTime>1430148316279</CreateTime>
+    <MsgType><![CDATA[news]]></MsgType>
+    <ArticleCount>1</ArticleCount>
+    <Articles>
+        <item>
+            <item>
+                <Title><![CDATA[测试啦]]></Title>
+                <Description><![CDATA[test]]></Description>
+                <PicUrl>
+                    <![CDATA[http://mmbiz.qpic.cn/mmbiz/dE9cHAjOvs8bd9SKYj9kuQJwO6tWzraIXu0aPbeXyH0uMIbfZCYyCPTibjJCuQKXylakV0CGeJVmHT8LqqVMyqA/0]]>
+                </PicUrl>
+                <Url><![CDATA[http://baidu.com]]></Url>
+            </item>
+        </item>
+    </Articles>
+</xml>
+
+
+<xml xmlns="">
+<ToUserName/>
+<FromUserName/>
+<CreateTime>0</CreateTime>
+<MsgType/>
+<ArticleCount>1</ArticleCount>
+<Articles>
+    <item>
+        <Title><![CDATA[test]]></Title>
+        <Description><![CDATA[test]]></Description>
+        <PicUrl><![CDATA[test]]></PicUrl>
+        <Url><![CDATA[test]]></Url>
+    </item>
+</Articles>
+</xml>
